@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>code-pan</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+</head>
+<body>
+  <div class="tabs">
+    <ul class="tabs__button-list">
+      <li class="tabs__button-item" data-language="html">HTML</li>
+      <li class="tabs__button-item" data-language="css">CSS</li>
+      <li class="tabs__button-item" data-language="js">JS</li>
+    </ul>
+    <ul class="tabs__content-list">
+      <li class="tabs__content-item">
+
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;link rel="stylesheet" href=":CSS"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="block"&gt;&lt;/div&gt;
+  &lt;script src=":JS"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+      </li>
+      <li class="tabs__content-item">
+
+<pre><code class="css">.block {
+  width: 200px;
+  height: 200px;
+}</code></pre>
+
+      </li>
+      <li class="tabs__content-item">
+
+<pre><code class="javascript">const block = document.querySelector('.block');
+block.addEventListener('click', (event) => {
+  console.log(Math.floor(Math.random() * 16777216));
+  // event.target.style.backgroundColor = Math.floor(Math.random() * 16777216);
+});</code></pre>
+
+      </li>
+    </ul>
+  </div>
+  <script src="./libs/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="./libs/ui-tabs/tabs.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

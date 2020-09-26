@@ -1,0 +1,32 @@
+.tabs__button-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+}
+
+.tabs__button-item {
+  padding: 5px;
+  border: 1px solid #000000;
+
+  cursor: pointer;
+}
+
+.tabs__content-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tabs__content-item {
+  display: none;
+}
+
+.tabs__content-item pre {
+  margin: 0;
+}
+
+.tabs__content-item_show {
+  display: block;
+}
