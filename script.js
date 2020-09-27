@@ -9,25 +9,40 @@
   window.tabs = new Tabs(btn_cnt);
 })();
 
+
+
 (() => {
-  const tabs = tabs.getAll();
+  const target = document.querySelector('.code-result__result');
+  const entry = 'HTML';
 
-  const iframe = document.createElement('iframe');
+  const _tabs = Array.from(tabs.getAll());
+  const data = getData(_tabs);
 
-  // iframe.srcdoc = unescape();
+  codeResult(target, data, entry);
 
+  function getData(data) {
+    const result = {};
+    data.forEach(([ button, _content ]) => {
+      const path = button.textContent;
+      const type = button.dataset.type;
+      let content = _content.textContent;
+
+      if (type === 'text/html') content = unescape(content);
+
+      result[path] = {
+        type,
+        content,
+        url: null
+      };
+    });
+
+    return result;
+  }
 
   function unescape(text) {
-    return text.replace(/(&lt;)|(&gt;)/g, (match) => {
+    return text.replace(/&lt;|&gt;/g, (match) => {
       if (match === '&lt;') return '<';
       if (match === '&gt;') return '>';
     });
   }
-
-  function embedRelations(text, relations) {
-    relations.forEach(({ rela }) => {
-
-    });
-  }
-
 })();
